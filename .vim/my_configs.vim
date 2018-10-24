@@ -5,7 +5,7 @@ set relativenumber
 set number
 set t_Co=256 " lots of colors here
 set laststatus=2
-colorscheme vividchalk
+silent! colorscheme vividchalk
 
 " search related
 set hlsearch " highlight search

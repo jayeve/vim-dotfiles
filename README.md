@@ -1,15 +1,5 @@
 # Install
 
-make sure you have the `.vim/bundle` directory
-
 ```
-rm -rf ~/.vim && mkdir ~/.vim/bundle
+git clone https://github.com/jayeve/vim-dotfiles.git && cd vim-dotfiles && bash install.sh
 ```
-
-get Vundle
-
-```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-
-

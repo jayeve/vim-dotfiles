@@ -1,5 +1,7 @@
 set rtp +=~/.vim
 set rtp +=~/.vim/bundle/Vundle.vim
+
+" Plugins
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -27,5 +29,7 @@ Plugin 'honza/vim-snippets'                             " code snippets
 
 call vundle#end()
 
+" My Configs
+source ~/.vim/my_configs.vim
+
 source ~/.vim/plugin_configs.vim " mappings/settings specific to the above plugins
-source ~/.vim/my_configs.vim     " all my configs

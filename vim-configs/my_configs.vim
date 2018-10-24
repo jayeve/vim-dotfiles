@@ -28,6 +28,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*target*
 " keep vim history after closing
 set undofile
 set noswapfile
+set undodir=~/.vim/temp_dirs/undodir
 
 """""""""""""""""""""
 " Trailing Whitespace

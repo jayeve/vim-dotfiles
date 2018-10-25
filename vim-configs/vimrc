@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'                                 " fuzzy-finder
 Plugin 'flazz/vim-colorschemes'
+Plugin 'sheerun/vim-polyglot'                           " thrift colorescheme TODO path to jayeve/vim-colorshemes
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'

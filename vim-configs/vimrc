@@ -8,11 +8,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'                                 " fuzzy-finder
 Plugin 'flazz/vim-colorschemes'
-Plugin 'sheerun/vim-polyglot'                           " thrift colorescheme TODO path to jayeve/vim-colorshemes
+Plugin 'sheerun/vim-polyglot'                           " thrift colorescheme
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
+Plugin 'ruanyl/vim-gh-line'                             " Open git commit line highlight URL link from line in file
 Plugin 'terryma/vim-multiple-cursors'                   " Sublime-like multiple cursors
 Plugin 'godlygeek/tabular'                              " Tabularize for nice formatting
 Plugin 'MarcWeber/vim-addon-manager-known-repositories' " random shit

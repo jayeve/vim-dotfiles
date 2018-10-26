@@ -1,37 +1,44 @@
 set rtp +=~/.vim
-set rtp +=~/.vim/bundle/Vundle.vim
+
+" Install vim-plug if we don't already have it
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Plugins
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'kien/ctrlp.vim'                                 " fuzzy-finder
-Plugin 'flazz/vim-colorschemes'
-Plugin 'sheerun/vim-polyglot'                           " thrift colorescheme
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ruanyl/vim-gh-line'                             " Open git commit line highlight URL link from line in file
-Plugin 'terryma/vim-multiple-cursors'                   " Sublime-like multiple cursors
-Plugin 'godlygeek/tabular'                              " Tabularize for nice formatting
-Plugin 'MarcWeber/vim-addon-manager-known-repositories' " random shit
-Plugin 'junegunn/goyo.vim'                              " distraction free mode :Goyo [width]
-Plugin 'scrooloose/nerdtree'
-Plugin 'jremmen/vim-ripgrep'                            " simply better than Grep
-Plugin 'jlanzarotta/bufexplorer'                        " Bufexplorer
-Plugin 'itchyny/lightline.vim'                          " status line
-Plugin 'tomtom/tlib_vim'                                " needed for vim-snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'                   " needed for vim-snipmate
-Plugin 'garbas/vim-snipmate'                            " engine for the snippts because ultisnips didn't work
-Plugin 'honza/vim-snippets'                             " code snippets
-" Plugin 'YankRing.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'kien/ctrlp.vim'                                 " fuzzy-finder
+Plug 'flazz/vim-colorschemes'
+Plug 'sheerun/vim-polyglot'                           " thrift colorescheme
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'ruanyl/vim-gh-line'                             " Open git commit line highlight URL link from line in file
+Plug 'terryma/vim-multiple-cursors'                   " Sublime-like multiple cursors
+Plug 'godlygeek/tabular'                              " Tabularize for nice formatting
+Plug 'MarcWeber/vim-addon-manager-known-repositories' " random shit
+Plug 'junegunn/goyo.vim'                              " distraction free mode :Goyo [width]
+Plug 'scrooloose/nerdtree'
+Plug 'jremmen/vim-ripgrep'                            " simply better than Grep
+Plug 'jlanzarotta/bufexplorer'                        " Bufexplorer
+Plug 'itchyny/lightline.vim'                          " status line
+Plug 'tomtom/tlib_vim'                                " needed for vim-snipmate
+Plug 'MarcWeber/vim-addon-mw-utils'                   " needed for vim-snipmate
+Plug 'garbas/vim-snipmate'                            " engine for the snippts because ultisnips didn't work
+Plug 'honza/vim-snippets'                             " code snippets
+Plug 'ensime/ensime-vim'
+Plug 'derekwyatt/vim-scala'
 
-call vundle#end()
+filetype plugin indent on
+call plug#end()
 
 " My Configs
+set cursorline
 source ~/.vim/my_configs.vim
 
 source ~/.vim/plugin_configs.vim " mappings/settings specific to the above plugins

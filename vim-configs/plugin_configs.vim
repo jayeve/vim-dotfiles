@@ -7,6 +7,15 @@ let g:bufExplorerFindActive=1
 let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
 
+
+""""""""""""""""""""""""""""""
+" => ensime + deoplete
+""""""""""""""""""""""""""""""
+au FileType scala nnoremap <leader>df :EnDeclaration<CR>
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <leader>t :EnType<CR>
+
+
 """"""""""""""""""""""""""""""
 " => Snippets
 """"""""""""""""""""""""""""""

@@ -16,30 +16,28 @@ run apk add --no-cache \
     ncurses5 \
     ncurses-dev \
     build-base \
-    py3-pip \
-    neovim
-
-run git clone https://github.com/vim/vim.git
-
-run cd vim && ./configure --with-features=huge \
-    --enable-pythoninterp=yes \
-    --enable-python3interp=yes \
-    --enable-luainterp=yes && make && make install
+    py3-pip
 
 workdir /home/dev
 env HOME /home/dev
 
-# setup bash
+# install vim
+run git clone https://github.com/vim/vim.git && \
+    cd vim && ./configure --with-features=huge \
+        --enable-pythoninterp=yes \
+        --enable-python3interp=yes \
+        --enable-luainterp=yes && make && make install && \
+    cd .. && rm -rf vim
+
+# configure bash and vim
 run svn checkout https://github.com/jayeve/terminal/trunk/scalabox/dotfiles && \
     cp $HOME/dotfiles/.bash* $HOME && \
     cp $HOME/dotfiles/.tmux* $HOME && \
     rm -r dotfiles && \
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf && \
-    $HOME/.fzf/install
-
-# setup vim
-run pip3 install sexpdata websocket-client
-run git clone https://github.com/jayeve/vim-dotfiles.git $HOME/vim-dotfiles && \
+    $HOME/.fzf/install && \
+    pip3 install sexpdata websocket-client && \
+    git clone https://github.com/jayeve/vim-dotfiles.git $HOME/vim-dotfiles && \
     cd $HOME/vim-dotfiles && \
     ./install.sh && \
     rm -rf $HOME/vim-dotfiles

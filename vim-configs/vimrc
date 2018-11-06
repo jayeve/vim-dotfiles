@@ -29,19 +29,20 @@ Plug 'jlanzarotta/bufexplorer'                        " Bufexplorer
 Plug 'itchyny/lightline.vim'                          " status line
 Plug 'tomtom/tlib_vim'                                " needed for vim-snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'                   " needed for vim-snipmate
-Plug 'garbas/vim-snipmate'                            " engine for the snippts because ultisnips didn't work
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'                             " code snippets
 Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
+Plug 'airblade/vim-gitgutter'
+Plug 'kien/rainbow_parentheses.vim'
 
-"if has('nvim')
-"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"else
-"  Plug 'Shougo/deoplete.nvim'
-"  Plug 'roxma/nvim-yarp'
-"  Plug 'roxma/vim-hug-neovim-rpc'
-"endif
-"let g:deoplete#enable_at_startup = 1
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 filetype plugin indent on
 call plug#end()

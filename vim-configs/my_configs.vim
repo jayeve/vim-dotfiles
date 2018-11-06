@@ -6,6 +6,7 @@ set number
 set t_Co=256 " lots of colors here
 set laststatus=2
 silent! colorscheme vividchalk
+hi Search cterm=NONE ctermfg=black ctermbg=red
 
 " search related
 set hlsearch " highlight search
@@ -53,6 +54,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Update time
+set updatetime=100
+
 
 """""""""""""""""""""
 " custom key mappings
